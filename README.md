@@ -107,4 +107,4 @@ Open the relevant `SKILL.md` and provide it with your work. Include that skill's
 
 ## 👤 Author
 
-Built by [Matheus Mello](https://github.com/matheusmello00) — Senior Product Manager & Agile Coach.
+Built by [Matheus Mello](https://github.com/matheusmello00)
