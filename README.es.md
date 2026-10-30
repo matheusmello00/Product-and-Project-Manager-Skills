@@ -2,7 +2,7 @@
 
 [English](README.md) · [Português](README.pt.md) · **🌐 Español**
 
-<img src="assets/banner1.svg" alt="Product and Project Manager Skills — Matheus Mello" width="100%">
+<img src="assets/banner.svg" alt="Product and Project Manager Skills — Matheus Mello" width="100%">
 
 *Skills para product y project managers, listas para usar con tu asistente de IA.*
 
