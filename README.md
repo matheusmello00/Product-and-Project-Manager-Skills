@@ -56,21 +56,39 @@ Run these commands inside Claude Code:
 
 ```text
 /plugin marketplace add matheusmello00/Product-and-Project-Manager-Skills
+/plugin install product-project-manager-skills@product-project-manager-skills
 ```
 
-Then install the plugin listed by the marketplace and invoke its skills by plugin name.
+Then invoke a skill by plugin name:
+
+```text
+/product-project-manager-skills:backlog-creator
+Build the backlog from prd-bookswap.md.
+```
+
+The plugin contains the 6 skills. No API key or external service is needed to read the instructions; your assistant provides the model and, if you want to publish, the tracker connector.
 
 ### Codex or Cursor
 
-Clone the repository, then copy the skills into your personal skills directory:
+Clone the repository, then copy one skill into your personal skills directory:
 
 ```bash
 git clone https://github.com/matheusmello00/Product-and-Project-Manager-Skills.git
 mkdir -p ~/.agents/skills
-cp -R Product-and-Project-Manager-Skills/skills/* ~/.agents/skills/
+cp -R Product-and-Project-Manager-Skills/backlog-creator ~/.agents/skills/
 ```
 
-Check for existing folders with the same names before copying; copying can overwrite files. For team use, copy into `.agents/skills/` in your project instead.
+To install all 6, replace the last command with:
+
+```bash
+for s in feedback-analyzer user-interview-prep create-prd backlog-creator qa-check release-notes; do
+  cp -R Product-and-Project-Manager-Skills/$s ~/.agents/skills/
+done
+```
+
+Check for existing folders with the same names before copying; copying can overwrite files. For team use, copy into `.agents/skills/` in your project instead. In Codex, invoke `$backlog-creator`; in Cursor, use `/backlog-creator` or describe the task and let the assistant pick the skill.
+
+> `qa-check` uses the check script of `backlog-creator`. Install both side by side for the automatic check to work; otherwise it applies the manual checklist.
 
 ### Claude Code without the plugin
 
@@ -78,14 +96,14 @@ After cloning, use `~/.claude/skills/` for personal skills or `.claude/skills/` 
 
 ```bash
 mkdir -p ~/.claude/skills
-cp -R Product-and-Project-Manager-Skills/skills/* ~/.claude/skills/
+cp -R Product-and-Project-Manager-Skills/backlog-creator ~/.claude/skills/
 ```
 
-Choose either the plugin or the copy method to avoid duplicate installations.
+To install all 6, use the loop above with `~/.agents/skills/` replaced by `~/.claude/skills/`. Invoke `/backlog-creator`. Choose either the plugin or the copy method to avoid duplicate installations.
 
 ### Other assistants, including ChatGPT
 
-Open the relevant `SKILL.md` and provide it with your work. Automatic discovery depends on the assistant; cloning this repository does not install the skills into every product.
+Open the relevant `SKILL.md` and provide it with your work. Include that skill's `references/` files (and `scripts/` if the assistant can run Python) to have all the supporting material. Automatic discovery depends on the assistant; cloning this repository does not install the skills into every product.
 
 ## 👤 Author
 
