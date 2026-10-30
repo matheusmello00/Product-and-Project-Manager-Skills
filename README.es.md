@@ -48,20 +48,6 @@ nombre-de-la-skill/
 └── evals/            # Extensión nuestra: queries de descubrimiento y escenarios de calidad
 ```
 
-| Estándar | Qué exige | Cómo lo aplican las skills |
-|---|---|---|
-| `name` | 1 a 64 caracteres, letras minúsculas, números y guiones, sin guion al inicio, al final ni doble, igual al nombre de la carpeta | Carpeta y `name` idénticos, en `kebab-case` |
-| `description` | 1 a 1024 caracteres, qué hace la skill **y cuándo usarla**, con palabras clave | Capacidad, disparadores y límites explícitos ("no hace…") frente a las skills vecinas |
-| `compatibility` | Hasta 500 caracteres, solo requisitos reales de entorno | Necesidades de conector y Python, todas muy por debajo del límite |
-| `metadata` | Mapa texto-a-texto con propiedades extra | `author` y `version` |
-| `license`, `allowed-tools` | Opcionales; `allowed-tools` es experimental | `allowed-tools` limita cada skill a las herramientas que necesita |
-| Divulgación progresiva | Metadatos (~100 tokens) al inicio; instrucciones de menos de ~5.000 tokens al activarse; recursos bajo demanda | `SKILL.md` corto, profundidad en `references/`, cada referencia citada con *cuándo* leerla |
-| Referencias a archivos | Rutas relativas, un nivel de profundidad | `references/<archivo>.md`, nunca en cadena |
-| Scripts | Autocontenidos, errores útiles, casos límite resueltos | Un script opcional solo con la biblioteca estándar (`backlog-creator`), con `--help` y códigos de salida documentados |
-| Validación | `skills-ref validate ./skill` | Más nuestros evals: unas 20 queries de descubrimiento y al menos 3 escenarios de resultado por skill |
-
-Además del estándar, cada `SKILL.md` incluye `when_to_use`, `argument-hint`, `maturity`, `audience` y `tags`, que ayudan al descubrimiento y al catálogo.
-
 ## 📦 Instalación
 
 ### Plugin de Claude Code

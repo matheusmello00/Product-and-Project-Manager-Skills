@@ -48,20 +48,6 @@ skill-name/
 └── evals/            # Our addition: discovery queries and quality scenarios
 ```
 
-| Standard | What it requires | How the skills apply it |
-|---|---|---|
-| `name` | 1-64 characters, lowercase letters, numbers and hyphens, no leading, trailing or double hyphen, equal to the folder name | Folder and `name` are identical, in `kebab-case` |
-| `description` | 1-1024 characters, what the skill does **and when to use it**, with keywords | Capability, triggers and explicit limits ("does not…") toward neighbouring skills |
-| `compatibility` | Up to 500 characters, real environment requirements only | Connector and Python needs, all well under the limit |
-| `metadata` | String-to-string map for extra properties | `author` and `version` |
-| `license`, `allowed-tools` | Optional; `allowed-tools` is experimental | `allowed-tools` limits each skill to the tools it needs |
-| Progressive disclosure | Metadata (~100 tokens) at startup; instructions under about 5,000 tokens when activated; resources on demand | Short `SKILL.md`, depth in `references/`, each reference cited with *when* to read it |
-| File references | Relative paths, one level deep | `references/<file>.md`, never chains |
-| Scripts | Self-contained, helpful errors, edge cases handled | One optional standard-library script (`backlog-creator`), with `--help` and documented exit codes |
-| Validation | `skills-ref validate ./skill` | Plus our evals: about 20 discovery queries and at least 3 outcome scenarios per skill |
-
-Beyond the standard, each `SKILL.md` carries `when_to_use`, `argument-hint`, `maturity`, `audience` and `tags`, which help discovery and the catalogue.
-
 ## 📦 Install
 
 ### Claude Code plugin
