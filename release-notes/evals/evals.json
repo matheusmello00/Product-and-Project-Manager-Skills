@@ -1,0 +1,75 @@
+{
+  "skill_name": "release-notes",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write the release notes for v2.3 from these commits.",
+      "expected_output": "B2B Formal notes: CSV export as one feature, login fix and performance improvement in user language; noise omitted; unclear commit flagged.",
+      "files": ["evals/files/commits_mixed.txt"],
+      "expectations": [
+        "The two CSV export commits become a single New Features item",
+        "The NullPointerException fix is rewritten as a user problem without class or method names",
+        "The orders index commit appears as an Improvement in user terms (faster history)",
+        "The refactor, the lodash bump and the merge commit are omitted from user-facing sections",
+        "The commit 'fix stuff' is not turned into an invented item and is listed under Needs confirmation",
+        "The internal hostname and port do not appear anywhere in the user-facing sections",
+        "Tone defaults to B2B Formal and the file is saved as release-notes-v2.3.md or similar"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Make friendly in-app notes from these commits.",
+      "expected_output": "B2C Friendly tone using 'You can now…' style.",
+      "files": ["evals/files/commits_mixed.txt"],
+      "expectations": [
+        "Uses a warm, benefit-focused tone ('You can now…', 'We fixed…')",
+        "No jargon, ticket keys or internal names in the notes",
+        "Does not invent features that are not in the commits"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Internal release notes for support, same commits.",
+      "expected_output": "Internal tone with ticket keys allowed and the refactor/bump in Internal Notes.",
+      "files": ["evals/files/commits_mixed.txt"],
+      "expectations": [
+        "Ticket keys (ABC-101, ABC-110, ABC-120) are kept",
+        "The refactor and dependency bump appear under Internal Notes",
+        "Credentials, hostnames and infrastructure details are still not exposed"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Release notes for the repo at ./app between v2.2 and v2.3.",
+      "expected_output": "Read-only git log over the range; no writes.",
+      "files": [],
+      "expectations": [
+        "Uses git log with the tag range only, read-only",
+        "Does not commit, tag, push or modify the repository",
+        "Takes version and date from the tags or states what is missing"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Release notes from these notes: 'improved stuff in billing, some fixes, new dashboard soon'.",
+      "expected_output": "Vague input is not embellished; asks or flags.",
+      "files": [],
+      "expectations": [
+        "Does not invent specific features or fixes",
+        "'New dashboard soon' is not announced as released",
+        "Asks for detail or lists the items under Needs confirmation"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Write release notes in Portuguese for this release: added CSV export; removed the legacy XML export (users must switch to CSV).",
+      "expected_output": "Notes in Portuguese stating the breaking change and what users must do.",
+      "files": [],
+      "expectations": [
+        "Output text is in Portuguese",
+        "The removal of the XML export is stated explicitly with the action required",
+        "Section structure (New Features / Improvements / Bug Fixes) is preserved"
+      ]
+    }
+  ]
+}

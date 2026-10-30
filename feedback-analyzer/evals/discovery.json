@@ -1,0 +1,25 @@
+{
+  "skill_name": "feedback-analyzer",
+  "queries": [
+    {"id": 1, "query": "analyze this user feedback", "should_trigger": true, "expected_skill": "feedback-analyzer", "note": "activation"},
+    {"id": 2, "query": "what are users saying about the new checkout?", "should_trigger": true, "expected_skill": "feedback-analyzer", "note": "activation"},
+    {"id": 3, "query": "classify these customer comments by theme and sentiment", "should_trigger": true, "expected_skill": "feedback-analyzer", "note": "activation"},
+    {"id": 4, "query": "here is our NPS export, what are the main themes?", "should_trigger": true, "expected_skill": "feedback-analyzer", "note": "activation"},
+    {"id": 5, "query": "summarise the app store reviews and tell me what to fix first", "should_trigger": true, "expected_skill": "feedback-analyzer", "note": "activation"},
+    {"id": 6, "query": "find patterns in these support tickets", "should_trigger": true, "expected_skill": "feedback-analyzer", "note": "activation"},
+    {"id": 7, "query": "which feedback is urgent?", "should_trigger": true, "expected_skill": "feedback-analyzer", "note": "activation"},
+    {"id": 8, "query": "turn this CSAT survey into insights and recommendations", "should_trigger": true, "expected_skill": "feedback-analyzer", "note": "activation"},
+    {"id": 9, "query": "is there any churn risk in these comments?", "should_trigger": true, "expected_skill": "feedback-analyzer", "note": "activation"},
+    {"id": 10, "query": "I have 2,000 survey responses in an Excel file, group them", "should_trigger": true, "expected_skill": "feedback-analyzer", "note": "activation"},
+    {"id": 11, "query": "analisa este feedback de utilizadores", "should_trigger": true, "expected_skill": "feedback-analyzer", "note": "activation, Portuguese"},
+    {"id": 12, "query": "prepare the interview guide for our research on onboarding", "should_trigger": false, "expected_skill": "user-interview-prep", "note": "collision with neighbouring skill"},
+    {"id": 13, "query": "write the release notes for version 2.4", "should_trigger": false, "expected_skill": "release-notes", "note": "collision with neighbouring skill"},
+    {"id": 14, "query": "benchmark our product against three competitors", "should_trigger": false, "expected_skill": "product-discovery:product-benchmark", "note": "collision with neighbouring skill"},
+    {"id": 15, "query": "validate our strategy with market data", "should_trigger": false, "expected_skill": "product-discovery:strategy-validation", "note": "collision with neighbouring skill"},
+    {"id": 16, "query": "create the backlog from these findings", "should_trigger": false, "expected_skill": "backlog-creator", "note": "collision with neighbouring skill"},
+    {"id": 17, "query": "what is the status of the sprint?", "should_trigger": false, "expected_skill": null, "note": "out of scope"},
+    {"id": 18, "query": "calculate our NPS from these scores", "should_trigger": false, "expected_skill": null, "note": "out of scope: arithmetic on scores, not feedback analysis"},
+    {"id": 19, "query": "translate these reviews to English", "should_trigger": false, "expected_skill": null, "note": "out of scope"},
+    {"id": 20, "query": "reply to this angry customer email", "should_trigger": false, "expected_skill": null, "note": "out of scope"}
+  ]
+}

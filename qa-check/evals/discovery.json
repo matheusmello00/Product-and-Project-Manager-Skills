@@ -1,0 +1,152 @@
+{
+  "skill_name": "qa-check",
+  "queries": [
+    {
+      "id": 1,
+      "query": "are the acceptance criteria of these stories complete and unambiguous?",
+      "should_trigger": true,
+      "expected_skill": "qa-check",
+      "note": "activation"
+    },
+    {
+      "id": 2,
+      "query": "validate the acceptance criteria and test scenarios of this backlog",
+      "should_trigger": true,
+      "expected_skill": "qa-check",
+      "note": "activation"
+    },
+    {
+      "id": 3,
+      "query": "check if the test scenarios cover every criterion",
+      "should_trigger": true,
+      "expected_skill": "qa-check",
+      "note": "activation"
+    },
+    {
+      "id": 4,
+      "query": "review the Gherkin scenarios of these stories",
+      "should_trigger": true,
+      "expected_skill": "qa-check",
+      "note": "activation"
+    },
+    {
+      "id": 5,
+      "query": "is this story ready for refinement from a QA point of view?",
+      "should_trigger": true,
+      "expected_skill": "qa-check",
+      "note": "activation"
+    },
+    {
+      "id": 6,
+      "query": "find vague or untestable criteria in these stories",
+      "should_trigger": true,
+      "expected_skill": "qa-check",
+      "note": "activation"
+    },
+    {
+      "id": 7,
+      "query": "which acceptance criteria have no test scenario?",
+      "should_trigger": true,
+      "expected_skill": "qa-check",
+      "note": "activation"
+    },
+    {
+      "id": 8,
+      "query": "QA review of the stories before sprint planning",
+      "should_trigger": true,
+      "expected_skill": "qa-check",
+      "note": "activation"
+    },
+    {
+      "id": 9,
+      "query": "check the criteria of ST-04 and ST-05 in the backlog",
+      "should_trigger": true,
+      "expected_skill": "qa-check",
+      "note": "activation"
+    },
+    {
+      "id": 10,
+      "query": "what negative and permission scenarios are missing for this story?",
+      "should_trigger": true,
+      "expected_skill": "qa-check",
+      "note": "activation"
+    },
+    {
+      "id": 11,
+      "query": "validate the backlog that backlog-creator produced",
+      "should_trigger": true,
+      "expected_skill": "qa-check",
+      "note": "activation"
+    },
+    {
+      "id": 12,
+      "query": "propose the missing acceptance criteria and test scenarios for these stories",
+      "should_trigger": true,
+      "expected_skill": "qa-check",
+      "note": "activation"
+    },
+    {
+      "id": 13,
+      "query": "create the backlog with epics and stories",
+      "should_trigger": false,
+      "expected_skill": "backlog-creator",
+      "note": "collision with neighbouring skill"
+    },
+    {
+      "id": 14,
+      "query": "write the PRD for this feature",
+      "should_trigger": false,
+      "expected_skill": "create-prd",
+      "note": "collision with neighbouring skill"
+    },
+    {
+      "id": 15,
+      "query": "write the epics and stories with acceptance criteria from the PRD",
+      "should_trigger": false,
+      "expected_skill": "backlog-creator",
+      "note": "collision with neighbouring skill"
+    },
+    {
+      "id": 16,
+      "query": "run the QA tests for this story in the browser",
+      "should_trigger": false,
+      "expected_skill": null,
+      "note": "out of scope"
+    },
+    {
+      "id": 17,
+      "query": "write the technical spec for this story",
+      "should_trigger": false,
+      "expected_skill": null,
+      "note": "out of scope"
+    },
+    {
+      "id": 18,
+      "query": "estimate the story points",
+      "should_trigger": false,
+      "expected_skill": null,
+      "note": "out of scope"
+    },
+    {
+      "id": 19,
+      "query": "what is the status of the sprint?",
+      "should_trigger": false,
+      "expected_skill": null,
+      "note": "out of scope"
+    },
+    {
+      "id": 20,
+      "query": "prepare an interview guide for user research",
+      "should_trigger": false,
+      "expected_skill": "user-interview-prep",
+      "note": "collision with neighbouring skill"
+    },
+    {
+      "id": 21,
+      "query": "does every rule in the story description have an acceptance criterion?",
+      "should_trigger": true,
+      "expected_skill": "qa-check",
+      "note": "activation"
+    }
+  ]
+}

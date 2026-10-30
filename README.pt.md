@@ -16,9 +16,51 @@
 
 ---
 
-## 🧭 Skills
+## 🧭 Comece pelo trabalho que você tem em mãos
 
-🚧 **Em Construção**
+| Etapa | Traga isto | Use esta skill | Peça isto |
+|---|---|---|---|
+| Discovery e Research | Um monte de feedback bruto (CSV, exportação de NPS, comentários colados) | `feedback-analyzer` | Classifique este feedback por tema, sentimento e urgência, com citações literais e os três principais padrões. |
+| Discovery e Research | Um tema de pesquisa ou uma hipótese | `user-interview-prep` | Prepare o brief de pesquisa: hipóteses, um roteiro de entrevista de 30 minutos com perguntas não indutivas e o que observar. |
+| Documentation | Uma ideia de produto, notas ou a transcrição de um workshop | `create-prd` | Escreva um PRD de 1 a 2 páginas, com exclusões reais, métricas mensuráveis e uma tabela de requisitos com IDs estáveis. |
+| Backlog | O PRD (ou qualquer documento grande, notas, uma planilha) | `backlog-creator` | Monte o backlog: épicos e histórias (As a / I want / So that), critérios Given / When / Then e cenários de teste em Gherkin, todos rastreados aos requisitos. |
+| Backlog | O backlog que você acabou de gerar | `qa-check` | Valide os critérios de aceite e os cenários de teste, confira se a descrição de cada história tem critério, aponte o que não é testável ou não tem cenário e proponha os critérios e cenários que faltam. |
+| Desenvolvimento | Commits, tickets ou notas brutas de uma release | `release-notes` | Escreva release notes voltadas ao usuário, em tom B2B, B2C ou interno. |
+
+As skills passam o trabalho umas para as outras por arquivos, não pela sua memória:
+
+`feedback-analyzer` + `user-interview-prep` → `create-prd` → `backlog-creator` → `qa-check` → desenvolvimento → `release-notes`
+
+A `create-prd` grava `prd-<nome>.md` com uma tabela de requisitos `FR-xx / NFR-xx`. A `backlog-creator` importa essa tabela como inventário e grava `<projeto>-backlog.md`. A `qa-check` lê esse backlog e devolve um veredito por história, com achados e propostas de critérios e cenários que você aplica e reverifica.
+
+O assistente lê o que você fornece, faz no máximo um lote de perguntas sobre o que bloqueia o trabalho e declara as premissas. Nunca inventa números, usuários, critérios ou mudanças que não estejam no seu material, e registra as lacunas como perguntas em aberto. Tudo o que ele propõe vem marcado como proposto. As skills só leem as suas fontes e produzem um único entregável em Markdown. A publicação em tracker só acontece com aprovação explícita.
+
+## 🧱 Como cada skill é construída (padrão Agent Skills)
+
+Todas as skills seguem a [especificação aberta Agent Skills](https://agentskills.io/specification), então funcionam em qualquer assistente compatível.
+
+```
+nome-da-skill/
+├── SKILL.md          # Obrigatório: frontmatter + instruções (menos de 500 linhas)
+├── references/       # Opcional: detalhe carregado só quando necessário, um nível de profundidade
+├── scripts/          # Opcional: código autocontido, com --help e erros claros
+├── assets/           # Opcional: modelos e recursos estáticos
+└── evals/            # Extensão nossa: queries de descoberta e cenários de qualidade
+```
+
+| Padrão | O que exige | Como as skills aplicam |
+|---|---|---|
+| `name` | 1 a 64 caracteres, letras minúsculas, números e hífens, sem hífen no início, no fim ou duplo, igual ao nome da pasta | Pasta e `name` idênticos, em `kebab-case` |
+| `description` | 1 a 1024 caracteres, o que a skill faz **e quando usar**, com palavras-chave | Capacidade, gatilhos e limites explícitos ("não faz…") em relação às skills vizinhas |
+| `compatibility` | Até 500 caracteres, só requisitos reais de ambiente | Necessidades de conector e Python, todas bem abaixo do limite |
+| `metadata` | Mapa texto-para-texto com propriedades extras | `author` e `version` |
+| `license`, `allowed-tools` | Opcionais; `allowed-tools` é experimental | `allowed-tools` limita cada skill às ferramentas de que precisa |
+| Divulgação progressiva | Metadados (~100 tokens) na inicialização; instruções com menos de ~5.000 tokens na ativação; recursos sob demanda | `SKILL.md` curto, profundidade em `references/`, cada referência citada com *quando* ler |
+| Referências de arquivo | Caminhos relativos, um nível de profundidade | `references/<arquivo>.md`, nunca em cadeia |
+| Scripts | Autocontidos, erros úteis, casos de borda tratados | Um script opcional só com a biblioteca padrão (`backlog-creator`), com `--help` e códigos de saída documentados |
+| Validação | `skills-ref validate ./skill` | Mais os nossos evals: cerca de 20 queries de descoberta e pelo menos 3 cenários de resultado por skill |
+
+Além do padrão, cada `SKILL.md` traz `when_to_use`, `argument-hint`, `maturity`, `audience` e `tags`, que ajudam na descoberta e no catálogo.
 
 ## 📦 Instalação
 

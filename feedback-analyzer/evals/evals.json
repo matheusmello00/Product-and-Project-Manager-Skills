@@ -1,0 +1,78 @@
+{
+  "skill_name": "feedback-analyzer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Analyze this NPS export and tell me what to fix first.",
+      "expected_output": "Themes with counts and verbatim quotes with IDs; Excel export and onboarding as top themes; R-007 surfaced as a high-urgency churn/billing outlier; the empty row reported as skipped; NPS not recomputed.",
+      "files": ["evals/files/feedback_nps.csv"],
+      "expectations": [
+        "Reports 11 entries analysed of 12 received and says the empty row R-012 was skipped",
+        "Identifies the Excel export failure (R-001, R-005, R-011) as a theme with High urgency",
+        "Identifies onboarding / getting started confusion (R-002, R-003, R-009) as a theme",
+        "Surfaces R-007 (charged twice, cancelling) as a high-urgency outlier even though it is a single entry",
+        "Every theme has a verbatim quote with its entry ID that exists in the file",
+        "Has at least 3 themes",
+        "Uses counts rather than percentages or labels percentages as indicative, since there are fewer than 20 entries",
+        "Notes the mismatch between score 9 and the complaint in R-001",
+        "Does not invent segments, dates or numbers not in the file",
+        "Does not copy personal data and does not modify the source file"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "What do users think? Feedback is in the file.",
+      "expected_output": "Explicit statement that three entries are too few to conclude; everything labelled weak signal; entries still classified.",
+      "files": ["evals/files/feedback_pequeno.txt"],
+      "expectations": [
+        "States that fewer than 5 entries are too few to draw conclusions",
+        "Labels every pattern as a weak signal and none as Strong",
+        "Still classifies the three entries (theme, sentiment, urgency, type)",
+        "Classifies the crash as Bug report with High urgency",
+        "Does not invent additional entries or percentages",
+        "Recommendations are limited and say more data is needed"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Classify this feedback: 'Login is broken, I can't use the app'; 'Love the new reports'; 'Pricing is too high for small teams'; 'Please add Slack integration'; 'Login fails again today, blocking my whole team'.",
+      "expected_output": "Pasted entries numbered, classified, login theme High urgency with two quotes, weak-signal labelling for a five-entry sample.",
+      "files": [],
+      "expectations": [
+        "Assigns IDs to the five entries and says it did so",
+        "Classifies the login entries as Bug report, Negative, High urgency, in one theme",
+        "Includes a verbatim quote with ID for every theme",
+        "Notes that five entries are an indicative sample only",
+        "Has at least 3 themes",
+        "Does not editorialise about what users 'really' mean"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "I have a 4,000-row CSV of app reviews, analyse all of it.",
+      "expected_output": "Reads in batches, keeps a working file, runs the completeness check, declares any subset, does not present sampling as the full set.",
+      "files": [],
+      "expectations": [
+        "Checks the file size and structure before reading and states which columns it uses for text and score",
+        "Processes the file in batches and keeps a running theme tally in a working file",
+        "Runs a completeness check: total entries equal the sum of theme counts and a spot-check against the source",
+        "States exactly what was covered if it did not classify every row and how the subset was chosen",
+        "Saves the full classified table to a file instead of printing 4,000 rows",
+        "Keeps the analysis part under two pages"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Analyse these reviews and write the report in Portuguese: 'The app is great but sync takes forever'; 'Sync never finishes, I lost an hour of work'; 'Muito bom, recomendo'; 'Why can't I change my username?'; 'Sync is slow on Android'; 'Sync stuck on 98% again'.",
+      "expected_output": "Report in Portuguese; quotes verbatim in their original language; sync as the main theme.",
+      "files": [],
+      "expectations": [
+        "The report text is in Portuguese",
+        "Quotes stay in their original language, unedited and not translated inside the quotation marks",
+        "Sync issues form the top theme with at least 4 entries and a verbatim quote",
+        "The 'lost an hour of work' entry is flagged as High urgency",
+        "Theme names and recommendations are in Portuguese while IDs are untouched"
+      ]
+    }
+  ]
+}

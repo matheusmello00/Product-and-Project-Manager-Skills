@@ -1,0 +1,25 @@
+{
+  "skill_name": "release-notes",
+  "queries": [
+    {"id": 1, "query": "write the release notes for this version", "should_trigger": true, "expected_skill": "release-notes", "note": "activation"},
+    {"id": 2, "query": "turn these commits into release notes", "should_trigger": true, "expected_skill": "release-notes", "note": "activation"},
+    {"id": 3, "query": "what shipped this sprint? write it for customers", "should_trigger": true, "expected_skill": "release-notes", "note": "activation"},
+    {"id": 4, "query": "changelog for v2.3 from the git history", "should_trigger": true, "expected_skill": "release-notes", "note": "activation"},
+    {"id": 5, "query": "make friendly in-app release notes from these Jira tickets", "should_trigger": true, "expected_skill": "release-notes", "note": "activation"},
+    {"id": 6, "query": "draft internal release notes for support and CSMs", "should_trigger": true, "expected_skill": "release-notes", "note": "activation"},
+    {"id": 7, "query": "translate these technical changes into user-facing language", "should_trigger": true, "expected_skill": "release-notes", "note": "activation"},
+    {"id": 8, "query": "release notes from the sprint 14 fixVersion", "should_trigger": true, "expected_skill": "release-notes", "note": "activation"},
+    {"id": 9, "query": "B2B formal release notes for the enterprise changelog page", "should_trigger": true, "expected_skill": "release-notes", "note": "activation"},
+    {"id": 10, "query": "summarise the raw notes from the deploy into notes users can read", "should_trigger": true, "expected_skill": "release-notes", "note": "activation"},
+    {"id": 11, "query": "write the PRD for the new export feature", "should_trigger": false, "expected_skill": "prd-generator", "note": "collision with neighbouring skill"},
+    {"id": 12, "query": "create epics and stories from this document", "should_trigger": false, "expected_skill": "backlog-creator", "note": "collision with neighbouring skill"},
+    {"id": 13, "query": "analyse this customer feedback and find themes", "should_trigger": false, "expected_skill": "feedback-analyzer", "note": "collision with neighbouring skill"},
+    {"id": 14, "query": "prepare questions for next week's user interviews", "should_trigger": false, "expected_skill": "user-interview-prep", "note": "collision with neighbouring skill"},
+    {"id": 15, "query": "what is the status of the sprint?", "should_trigger": false, "expected_skill": "status-tracking", "note": "collision with neighbouring skill"},
+    {"id": 16, "query": "write the launch announcement email for the new feature", "should_trigger": false, "expected_skill": null, "note": "out of scope (marketing copy)"},
+    {"id": 17, "query": "write the deployment runbook for this release", "should_trigger": false, "expected_skill": null, "note": "out of scope"},
+    {"id": 18, "query": "tag and publish the release on GitHub", "should_trigger": false, "expected_skill": null, "note": "out of scope (writes to repo)"},
+    {"id": 19, "query": "update the roadmap with what we released", "should_trigger": false, "expected_skill": "roadmap-update", "note": "collision with neighbouring skill"},
+    {"id": 20, "query": "review this pull request", "should_trigger": false, "expected_skill": null, "note": "out of scope"}
+  ]
+}

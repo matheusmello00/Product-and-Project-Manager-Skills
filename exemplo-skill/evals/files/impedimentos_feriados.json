@@ -1,0 +1,23 @@
+{
+  "board": "Test",
+  "threshold_business_days": 3,
+  "today": "2026-04-28",
+  "holidays": [
+    "2026-04-24",
+    "2026-04-27"
+  ],
+  "impediments": [
+    {
+      "key": "F-1",
+      "title": "Blocked before the bridge day",
+      "assignee": "Ana",
+      "blocked_since": "2026-04-23"
+    },
+    {
+      "key": "F-2",
+      "title": "Blocked yesterday",
+      "assignee": "Bruno",
+      "blocked_since": "2026-04-28"
+    }
+  ]
+}

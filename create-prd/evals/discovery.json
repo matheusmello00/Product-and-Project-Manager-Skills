@@ -1,0 +1,152 @@
+{
+  "skill_name": "create-prd",
+  "queries": [
+    {
+      "id": 1,
+      "query": "write a PRD for a book swap feature",
+      "should_trigger": true,
+      "expected_skill": "create-prd",
+      "note": "activation"
+    },
+    {
+      "id": 2,
+      "query": "turn this idea into a product requirements document",
+      "should_trigger": true,
+      "expected_skill": "create-prd",
+      "note": "activation"
+    },
+    {
+      "id": 3,
+      "query": "create a one-to-two page PRD from these workshop notes",
+      "should_trigger": true,
+      "expected_skill": "create-prd",
+      "note": "activation"
+    },
+    {
+      "id": 4,
+      "query": "I need a PRD before we start refinement",
+      "should_trigger": true,
+      "expected_skill": "create-prd",
+      "note": "activation"
+    },
+    {
+      "id": 5,
+      "query": "draft the PRD for the new checkout flow",
+      "should_trigger": true,
+      "expected_skill": "create-prd",
+      "note": "activation"
+    },
+    {
+      "id": 6,
+      "query": "what should be in scope for the MVP of this idea?",
+      "should_trigger": true,
+      "expected_skill": "create-prd",
+      "note": "activation"
+    },
+    {
+      "id": 7,
+      "query": "define success metrics and out-of-scope for this feature",
+      "should_trigger": true,
+      "expected_skill": "create-prd",
+      "note": "activation"
+    },
+    {
+      "id": 8,
+      "query": "turn this Confluence page into a PRD",
+      "should_trigger": true,
+      "expected_skill": "create-prd",
+      "note": "activation"
+    },
+    {
+      "id": 9,
+      "query": "write the requirements for a student marketplace with FR ids",
+      "should_trigger": true,
+      "expected_skill": "create-prd",
+      "note": "activation"
+    },
+    {
+      "id": 10,
+      "query": "make this PRD shorter and force decisions",
+      "should_trigger": true,
+      "expected_skill": "create-prd",
+      "note": "activation"
+    },
+    {
+      "id": 11,
+      "query": "document what we are NOT building for this release",
+      "should_trigger": true,
+      "expected_skill": "create-prd",
+      "note": "activation"
+    },
+    {
+      "id": 12,
+      "query": "create the PRD from the feedback analysis",
+      "should_trigger": true,
+      "expected_skill": "create-prd",
+      "note": "activation"
+    },
+    {
+      "id": 13,
+      "query": "break this PRD into epics and stories",
+      "should_trigger": false,
+      "expected_skill": "backlog-creator",
+      "note": "collision with neighbouring skill"
+    },
+    {
+      "id": 14,
+      "query": "write acceptance criteria and Gherkin for each story",
+      "should_trigger": false,
+      "expected_skill": "backlog-creator",
+      "note": "collision with neighbouring skill"
+    },
+    {
+      "id": 15,
+      "query": "prepare the interview guide for this research topic",
+      "should_trigger": false,
+      "expected_skill": "user-interview-prep",
+      "note": "collision with neighbouring skill"
+    },
+    {
+      "id": 16,
+      "query": "classify this customer feedback into themes",
+      "should_trigger": false,
+      "expected_skill": "feedback-analyzer",
+      "note": "collision with neighbouring skill"
+    },
+    {
+      "id": 17,
+      "query": "write the release notes for v2.3",
+      "should_trigger": false,
+      "expected_skill": "release-notes",
+      "note": "collision with neighbouring skill"
+    },
+    {
+      "id": 18,
+      "query": "write the technical spec for this feature",
+      "should_trigger": false,
+      "expected_skill": null,
+      "note": "out of scope"
+    },
+    {
+      "id": 19,
+      "query": "estimate the effort of this PRD",
+      "should_trigger": false,
+      "expected_skill": null,
+      "note": "out of scope"
+    },
+    {
+      "id": 20,
+      "query": "what is the status of the sprint?",
+      "should_trigger": false,
+      "expected_skill": null,
+      "note": "out of scope"
+    },
+    {
+      "id": 21,
+      "query": "build the backlog from prd-bookswap.md",
+      "should_trigger": false,
+      "expected_skill": "backlog-creator",
+      "note": "collision with neighbouring skill"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "skill_name": "user-interview-prep",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Prepare interviews to understand how students currently trade textbooks.",
+      "expected_output": "A brief with one research goal, 3-5 falsifiable hypotheses, a 30-minute guide, watch-fors, anti-patterns, screener and consent notes.",
+      "files": [],
+      "expectations": [
+        "The research goal is one sentence starting with 'Understand' or 'Discover'",
+        "Between 3 and 5 hypotheses, each with a 'true if' and a 'false if'",
+        "The guide has warm-up (5), core (20) and wrap-up (5) blocks",
+        "At most 12 questions in total",
+        "Contains a screener note and a consent/recording note",
+        "Fits on two printed pages"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I want to validate that students want a wishlist feature. Prepare the interviews.",
+      "expected_output": "The goal is reframed from validating the solution to understanding the underlying problem; no questions about the wishlist itself.",
+      "files": [],
+      "expectations": [
+        "The goal does not start with 'Validate' or 'Confirm' and is reframed as the problem behind the wishlist",
+        "States that it reframed the goal",
+        "No question mentions or pitches the wishlist feature",
+        "No question starts with 'Would you' or 'Do you think'"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Prepare follow-up interviews based on this feedback summary.",
+      "expected_output": "Hypotheses grounded in the feedback with the source cited; assumptions labelled; context not presented as proof.",
+      "files": [
+        "evals/files/contexto_feedback.md"
+      ],
+      "expectations": [
+        "Hypotheses derived from the findings (course search, ignored requests, WhatsApp workaround) cite the feedback as source",
+        "Hypotheses not backed by the file are labelled 'assumption'",
+        "Does not quote numbers that are not in the file",
+        "The WhatsApp workaround appears among the things to watch for or as a probe",
+        "Every core question has at least 2 follow-up prompts"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Interview kit for onboarding research. Our users are small-business owners.",
+      "expected_output": "Questions about past behaviour and the real onboarding episode; every question passes the Mom Test.",
+      "files": [],
+      "expectations": [
+        "Core questions ask for specific recent episodes ('Tell me about the last time...')",
+        "No hypothetical or future-opinion questions",
+        "No question about the PM's product or solution",
+        "The wrap-up includes 'Is there anything I should have asked but didn't?' or equivalent",
+        "Flags at least one weak or untestable hypothesis if one was surfaced, with a better version"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Preparar entrevistas com utilizadores sobre o processo de pagamento da app. Responde em português.",
+      "expected_output": "The brief in Portuguese with the same structure and rules.",
+      "files": [],
+      "expectations": [
+        "The output is in Portuguese",
+        "Same structure: goal, screener, hypotheses with falsifiers, guide, watch-fors, anti-patterns, consent note",
+        "Maximum 12 questions and none are hypothetical",
+        "Quotes and product terms are kept verbatim"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Run the interview for me and take notes.",
+      "expected_output": "Declines to conduct the interview; offers the brief instead.",
+      "files": [],
+      "expectations": [
+        "States that the skill prepares the kit and does not conduct or transcribe interviews",
+        "Does not invent interview answers or notes"
+      ]
+    }
+  ]
+}

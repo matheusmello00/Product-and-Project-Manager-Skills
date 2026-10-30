@@ -1,0 +1,212 @@
+{
+  "skill_name": "backlog-creator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Check this backlog before I baseline it.",
+      "expected_output": "A clean report: no issues, coverage 100%, the single-story epic flagged as a warning.",
+      "files": [
+        "evals/files/backlog_valido.md"
+      ],
+      "expectations": [
+        "Reports zero issues",
+        "Reports requirement coverage of 100%",
+        "Flags EP-02 as an epic with a single story (probably a story)",
+        "Does not create anything in the tracker"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Validate these stories, I think the criteria are weak.",
+      "expected_output": "Issues for missing fields, one criterion, an incomplete criterion and an invalid priority; warnings for vague wording.",
+      "files": [
+        "evals/files/backlog_ac_insuficiente.md"
+      ],
+      "expectations": [
+        "Flags ST-01 as having fewer than 2 acceptance criteria",
+        "Flags ST-02 as missing 'So that' and a 'When' in a criterion",
+        "Flags the priority 'Urgent' as not being Must / Should / Could",
+        "Flags the vague wording ('works', 'fast') as warnings",
+        "Does not rewrite the criteria without being asked",
+        "Flags ST-02 as having no description"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Does the backlog cover the whole PRD?",
+      "expected_output": "Coverage gap listed requirement by requirement, with the untraced story and the empty epic.",
+      "files": [
+        "evals/files/backlog_cobertura.md"
+      ],
+      "expectations": [
+        "Reports coverage below 100%",
+        "Lists FR-03, FR-04 and FR-05 as not covered by any story",
+        "Flags ST-03 as not traced to any requirement",
+        "Flags EP-02 as an epic with no stories",
+        "Does not present the backlog as complete",
+        "Flags FR-01 as owned by more than one epic and FR-04 / FR-05 as not assigned to any epic",
+        "Flags FR-04 as having no source reference"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Check the dependencies of the swap flow.",
+      "expected_output": "Unknown dependency and circular dependency reported as issues.",
+      "files": [
+        "evals/files/backlog_dependencias.md"
+      ],
+      "expectations": [
+        "Reports that ST-03 depends on the unknown story ST-09",
+        "Reports the cycle between ST-01 and ST-02",
+        "Does not silently drop or rewrite the dependencies"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Create the backlog for BookSwap from the PRD.",
+      "expected_output": "Warning that zero stories is not a finished backlog; asks for the PRD instead of inventing stories.",
+      "files": [
+        "evals/files/backlog_vazio.md"
+      ],
+      "expectations": [
+        "The report does NOT present an empty backlog as done",
+        "Warns that the PRD may not have been read or its requirements not extracted",
+        "Points to references/story-writing.md",
+        "Does not invent requirements or stories",
+        "The warning appears in the delivered report, not only in the script output"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Check the test scenarios of these stories.",
+      "expected_output": "Story without scenarios, invalid scenario type, scenario covering a nonexistent criterion, uncovered criteria and happy-path-only stories reported.",
+      "files": [
+        "evals/files/backlog_cenarios.md"
+      ],
+      "expectations": [
+        "Reports ST-02 as having no test scenarios (issue)",
+        "Reports TC-02 as having an invalid type and covering a criterion that does not exist (issues)",
+        "Warns that acceptance criterion 2 of ST-01 and of ST-03 is not covered by any scenario",
+        "Warns that ST-01 and ST-03 have only happy-path scenarios",
+        "Does not invent scenarios without being asked",
+        "Flags ST-03 as having an open question (not spec-ready)",
+        "Flags the Scenario Outline TC-04 whose <expected> placeholder has no Examples column",
+        "Flags TC-02 as having no When step"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Create the backlog for BookSwap with epics, stories, acceptance criteria and test scenarios. PRD: students publish books with title and course (title mandatory), only the owner can remove a listing, and students request swaps.",
+      "expected_output": "For each story: criteria and test scenarios including at least one non-happy case, each criterion covered, nothing created in the tracker.",
+      "files": [],
+      "expectations": [
+        "Every story has at least two Given/When/Then criteria and at least one test scenario",
+        "Every acceptance criterion is covered by at least one scenario, and each scenario states the criteria it covers",
+        "Each story has at least one negative, boundary, permission or alternative scenario (e.g. the owner-only removal produces a permission scenario; the mandatory title produces a negative scenario)",
+        "Scenario Then steps are observable, without words such as 'works' or 'correctly'",
+        "Does not create items in the tracker before approval",
+        "Test scenarios are written in Gherkin (Scenario with Given / When / Then, tagged with ID, type and covered criteria)"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Here is the PRD summary: students can publish books, search by course and request swaps; the owner can accept or decline. Make me the backlog.",
+      "expected_output": "Requirement IDs assigned and declared; epics proposed and confirmed before slicing; no tracker write.",
+      "files": [],
+      "expectations": [
+        "Assigns FR-xx IDs in reading order and states that it did so",
+        "Presents the draft epic list and asks for confirmation before writing stories",
+        "Groups epics by user value, not by technical layer",
+        "Leaves the estimate empty",
+        "Does not create items in the tracker before approval"
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "Here is our 300-page requirements specification (PDF). Build the backlog for the payments module.",
+      "expected_output": "Reads in parts, builds and saves a requirement inventory with source references, reports what was not read, and asks for confirmation before creating any epic.",
+      "files": [],
+      "expectations": [
+        "Maps the document structure (sections / page ranges) before reading the content",
+        "Reads in parts and records requirements in an inventory file, each with a source reference",
+        "Reports the parts not read or not understood instead of presenting the inventory as complete",
+        "Runs a completeness check (counts per section and sampling statements back into the inventory)",
+        "Asks the user to confirm the inventory before writing epics or stories",
+        "Does not create anything in the tracker"
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "Make the backlog from this Confluence page and from the notes of yesterday's workshop. The page says the daily transfer limit is 5,000 EUR; in the notes the client said it should be 10,000 EUR.",
+      "expected_output": "Both sources read, the conflicting limit surfaced and not decided silently, criteria not invented, open question recorded.",
+      "files": [],
+      "expectations": [
+        "Lists both versions of the transfer limit with their sources and asks which one wins",
+        "Does not pick one value silently and does not put an invented value in an acceptance criterion",
+        "Records the conflict as an open question on the affected story if it is not resolved",
+        "Keeps requirement IDs from the Confluence page verbatim and assigns declared IDs to workshop-note requirements without one",
+        "Groups requirements into epics by user value, each requirement owned by exactly one epic"
+      ]
+    },
+    {
+      "id": 11,
+      "prompt": "Create the backlog in European Portuguese from this text: students publish books (title is mandatory) and only the owner can remove a listing.",
+      "expected_output": "Stories with the mandatory As a / I want / So that statement and Given / When / Then criteria; the text after the keywords in Portuguese.",
+      "files": [],
+      "expectations": [
+        "Every story has the three parts of the statement: As a, I want and So that (keywords in English)",
+        "The 'so that' states a value or outcome, not a restatement of the action",
+        "Acceptance criteria use the Given / When / Then keywords, at least two per story, with the text in Portuguese",
+        "The owner-only removal produces a permission scenario and the mandatory title a negative one, each linked to a criterion",
+        "Test scenarios are in Gherkin: one behaviour each, Given / When / Then keywords, tagged with @TC id, type and @AC number",
+        "Keeps the English keywords of the statement and of Gherkin even though the content is in Portuguese"
+      ]
+    },
+    {
+      "id": 12,
+      "prompt": "Export the test scenarios of the backlog to Gherkin files.",
+      "expected_output": "One .feature file per story with the statement, criteria as comments and tagged scenarios; Scenario Outline with Examples for the boundary scenario.",
+      "files": [
+        "evals/files/backlog_valido.md"
+      ],
+      "expectations": [
+        "Runs the check first and reports its findings",
+        "Writes one .feature file per story using the --features option",
+        "Each scenario is tagged with its ID, type and criteria (e.g. @TC-01 @happy @AC1)",
+        "The boundary scenario TC-07 is exported as a Scenario Outline with an Examples table",
+        "Does not alter the scenarios while exporting"
+      ]
+    },
+    {
+      "id": 13,
+      "prompt": "Context: a book-swap app for students. Students publish books (title mandatory, maximum 120 characters), search by course, request swaps from the owner, and only the owner can remove their listing. Build the backlog.",
+      "expected_output": "One pass, no questions that are not blocking: a single Markdown file with inventory, epics (description + criteria), stories (As a / I want / So that, description, Given/When/Then, Gherkin scenarios), coverage matrix and open questions.",
+      "files": [],
+      "expectations": [
+        "Delivers a single Markdown backlog without asking the user to prepare any file or run any script",
+        "Asks at most one batch of questions and only about what blocks the work",
+        "Every epic has a description and acceptance criteria; every story has As a / I want / So that, a description, at least two Given/When/Then criteria and Gherkin scenarios",
+        "The 120-character limit produces a boundary scenario (Scenario Outline with Examples) and the owner-only removal a permission scenario",
+        "Values not given in the context (e.g. what counts as a valid course) become open questions, not invented",
+        "Runs the check on the file, or applies the manual checklist if Python is unavailable, and reports its results",
+        "Does not create anything in a tracker and does not offer anything beyond mentioning that publishing and the .feature export are available"
+      ]
+    },
+    {
+      "id": 14,
+      "prompt": "Build the backlog from this PRD.",
+      "expected_output": "PRD imported, not re-extracted: IDs, users, priorities, exclusions and open questions carried into the backlog.",
+      "files": [
+        "evals/files/prd_bookswap.md"
+      ],
+      "expectations": [
+        "Recognises the file as a create-prd PRD and imports its Requirements table instead of re-reading the prose",
+        "Keeps FR-01..FR-03 and NFR-01 verbatim in the inventory, with Kind functional / non_functional",
+        "Uses the PRD's User column in the As a of the stories and its Priority as starting priority",
+        "Puts 'We are NOT building' items in the Out of scope of the epics and V2 items only in the Notes",
+        "Carries the open question about valid courses to the affected story with its owner",
+        "Does not ask the user to confirm the inventory (small PRD, normal path)"
+      ]
+    }
+  ]
+}

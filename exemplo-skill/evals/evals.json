@@ -1,0 +1,70 @@
+{
+  "skill_name": "blocker-aging",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Show me the picture of impediments for the daily.",
+      "expected_output": "Unknown-aging bucket at the top, separated from those within the limit.",
+      "files": [
+        "evals/files/impedimentos_aging_desconhecido.json"
+      ],
+      "expectations": [
+        "Impediments without a reliable date appear in their own unknown-aging bucket",
+        "That bucket appears before or alongside the escalation bucket, not at the end",
+        "No impediment of unknown age is reported as being within the limit",
+        "The impediment with 11 business days appears as to escalate"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Team impediments. We're in the week of 25 April, with a bridge day on Monday.",
+      "expected_output": "Aging that discounts holidays and does not trigger undue escalation.",
+      "files": [
+        "evals/files/impedimentos_feriados.json"
+      ],
+      "expectations": [
+        "The holidays passed in the input are discounted from the business-day count",
+        "The holidays applied are echoed in the output",
+        "No impediment is escalated merely because of the holiday days"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Our team doesn't use the Flagged field, we mark blockers with the Blocked status.",
+      "expected_output": "Alternative mapping recognised, without silently returning zero impediments.",
+      "files": [],
+      "expectations": [
+        "The proposed JQL covers the Blocked status and not only the Flagged field",
+        "If it finds no impediments, it says so explicitly instead of presenting an empty list as good news",
+        "The marking mechanism used is recorded in the notes"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Is there any blocker that nobody is following?",
+      "expected_output": "Focus on those without an owner and those of unknown aging.",
+      "files": [
+        "evals/files/impedimentos_aging_desconhecido.json"
+      ],
+      "expectations": [
+        "Identifies the impediment without an owner",
+        "Identifies those of unknown aging as a risk of slipping through in silence",
+        "Does not resolve or reassign anything (read-only)"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Impediments for the NAC board for the daily.",
+      "expected_output": "Warning that zero impediments may be a JQL that does not cover the team's marking mechanism.",
+      "files": [
+        "evals/files/impedimentos_zero.json"
+      ],
+      "expectations": [
+        "The report does NOT present zero impediments as good news",
+        "Warns that the marking mechanism (Flagged field, Blocked status or label) must be confirmed",
+        "Points to references/impediment-detection.md",
+        "The warning appears in the delivered report, not only in the script output"
+      ]
+    }
+  ]
+}

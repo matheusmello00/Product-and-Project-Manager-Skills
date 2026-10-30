@@ -1,0 +1,25 @@
+{
+  "skill_name": "user-interview-prep",
+  "queries": [
+    {"id": 1, "query": "prepare user interviews about how students trade textbooks", "should_trigger": true, "expected_skill": "user-interview-prep", "note": "activation"},
+    {"id": 2, "query": "write an interview guide for our discovery research", "should_trigger": true, "expected_skill": "user-interview-prep", "note": "activation"},
+    {"id": 3, "query": "I'm talking to customers next week, help me prepare questions", "should_trigger": true, "expected_skill": "user-interview-prep", "note": "activation"},
+    {"id": 4, "query": "create a research brief with hypotheses to test", "should_trigger": true, "expected_skill": "user-interview-prep", "note": "activation"},
+    {"id": 5, "query": "give me non-leading interview questions", "should_trigger": true, "expected_skill": "user-interview-prep", "note": "activation"},
+    {"id": 6, "query": "Mom Test questions for onboarding research", "should_trigger": true, "expected_skill": "user-interview-prep", "note": "activation"},
+    {"id": 7, "query": "I want to validate that users need a wishlist feature, prepare the interviews", "should_trigger": true, "expected_skill": "user-interview-prep", "note": "activation; goal must be reframed from Validate to Understand/Discover"},
+    {"id": 8, "query": "prepare follow-up interviews based on this feedback analysis", "should_trigger": true, "expected_skill": "user-interview-prep", "note": "activation with context"},
+    {"id": 9, "query": "what should I ask users to understand why they churn?", "should_trigger": true, "expected_skill": "user-interview-prep", "note": "activation"},
+    {"id": 10, "query": "interview script for 30-minute user calls", "should_trigger": true, "expected_skill": "user-interview-prep", "note": "activation"},
+    {"id": 11, "query": "what should I screen for when recruiting interviewees?", "should_trigger": true, "expected_skill": "user-interview-prep", "note": "activation"},
+    {"id": 12, "query": "preparar entrevistas com utilizadores sobre o processo de pagamento", "should_trigger": true, "expected_skill": "user-interview-prep", "note": "activation in Portuguese"},
+    {"id": 13, "query": "cluster this raw feedback into themes and sentiment", "should_trigger": false, "expected_skill": "feedback-clustering", "note": "collision with neighbouring skill"},
+    {"id": 14, "query": "synthesise the notes from my five interviews", "should_trigger": false, "expected_skill": "synthesize-research", "note": "collision with neighbouring skill"},
+    {"id": 15, "query": "analyse our NPS and CSAT survey results", "should_trigger": false, "expected_skill": "nps-csat-analysis", "note": "collision with neighbouring skill"},
+    {"id": 16, "query": "write the PRD for the wishlist feature", "should_trigger": false, "expected_skill": "prd-generator", "note": "collision with neighbouring skill"},
+    {"id": 17, "query": "benchmark our product against competitors", "should_trigger": false, "expected_skill": "product-benchmark", "note": "collision with neighbouring skill"},
+    {"id": 18, "query": "draft the release notes for version 2.4", "should_trigger": false, "expected_skill": "release-notes", "note": "collision with neighbouring skill"},
+    {"id": 19, "query": "write a satisfaction survey with 10 questions", "should_trigger": false, "expected_skill": null, "note": "out of scope: survey design, not interviews"},
+    {"id": 20, "query": "run the interview for me and take notes", "should_trigger": false, "expected_skill": null, "note": "out of scope: the skill prepares, it does not conduct"}
+  ]
+}

@@ -1,0 +1,13 @@
+id,date,nps,segment,comment
+R-001,2026-09-01,9,Pro,"Love the dashboard, but exports to Excel are broken since last week"
+R-002,2026-09-02,3,Free,"Onboarding is confusing, I could not find where to add my first project"
+R-003,2026-09-02,2,Free,"Too many steps to get started, almost gave up"
+R-004,2026-09-03,10,Pro,"Support answered in 10 minutes, great team"
+R-005,2026-09-04,4,Pro,"Export to Excel fails every time. We are blocked on our monthly report"
+R-006,2026-09-05,6,Free,"Would be nice to have dark mode"
+R-007,2026-09-06,1,Pro,"I was charged twice this month. If not refunded I am cancelling"
+R-008,2026-09-07,7,Free,"Okay product. Search is slow with many projects"
+R-009,2026-09-08,3,Free,"Could not understand how to invite teammates"
+R-010,2026-09-09,8,Pro,"Good value for the price"
+R-011,2026-09-10,5,Pro,"Excel export still broken, no workaround"
+R-012,2026-09-11,,Free,

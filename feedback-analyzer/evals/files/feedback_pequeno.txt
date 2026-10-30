@@ -1,0 +1,3 @@
+The app crashes when I open settings.
+Nice design.
+Why is there no way to export my data?

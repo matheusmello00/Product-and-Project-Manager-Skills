@@ -1,0 +1,131 @@
+{
+  "skill_name": "blocker-aging",
+  "queries": [
+    {
+      "id": 1,
+      "query": "what is blocked?",
+      "should_trigger": true,
+      "expected_skill": "blocker-aging",
+      "note": "activation"
+    },
+    {
+      "id": 2,
+      "query": "how long has this been stuck?",
+      "should_trigger": true,
+      "expected_skill": "blocker-aging",
+      "note": "activation"
+    },
+    {
+      "id": 3,
+      "query": "team impediments",
+      "should_trigger": true,
+      "expected_skill": "blocker-aging",
+      "note": "activation"
+    },
+    {
+      "id": 4,
+      "query": "what should I escalate today?",
+      "should_trigger": true,
+      "expected_skill": "blocker-aging",
+      "note": "activation"
+    },
+    {
+      "id": 5,
+      "query": "aging of the blockers",
+      "should_trigger": true,
+      "expected_skill": "blocker-aging",
+      "note": "activation"
+    },
+    {
+      "id": 6,
+      "query": "prepare the impediments part of the daily",
+      "should_trigger": true,
+      "expected_skill": "blocker-aging",
+      "note": "activation"
+    },
+    {
+      "id": 7,
+      "query": "do we have delivery risks because of blockers?",
+      "should_trigger": true,
+      "expected_skill": "blocker-aging",
+      "note": "activation"
+    },
+    {
+      "id": 8,
+      "query": "which issues have been flagged for more than 3 days?",
+      "should_trigger": true,
+      "expected_skill": "blocker-aging",
+      "note": "activation"
+    },
+    {
+      "id": 9,
+      "query": "who owns each blocker?",
+      "should_trigger": true,
+      "expected_skill": "blocker-aging",
+      "note": "activation"
+    },
+    {
+      "id": 10,
+      "query": "impediment aging for board X, ignore the holidays",
+      "should_trigger": true,
+      "expected_skill": "blocker-aging",
+      "note": "activation"
+    },
+    {
+      "id": 11,
+      "query": "are there blockers with no known date?",
+      "should_trigger": true,
+      "expected_skill": "blocker-aging",
+      "note": "activation"
+    },
+    {
+      "id": 12,
+      "query": "status of the blockers before the sync",
+      "should_trigger": true,
+      "expected_skill": "blocker-aging",
+      "note": "activation"
+    },
+    {
+      "id": 13,
+      "query": "how did the sprint go?",
+      "should_trigger": false,
+      "expected_skill": "sprint-health-report",
+      "note": "collision with neighbouring skill"
+    },
+    {
+      "id": 14,
+      "query": "how much fits in the next sprint?",
+      "should_trigger": false,
+      "expected_skill": "planning-preparation",
+      "note": "collision with neighbouring skill"
+    },
+    {
+      "id": 15,
+      "query": "what should we refine?",
+      "should_trigger": false,
+      "expected_skill": "backlog-ready-check",
+      "note": "collision with neighbouring skill"
+    },
+    {
+      "id": 16,
+      "query": "prepare the retro",
+      "should_trigger": false,
+      "expected_skill": "retro-preparation",
+      "note": "collision with neighbouring skill"
+    },
+    {
+      "id": 17,
+      "query": "unblock this issue and reassign it to Bruno",
+      "should_trigger": false,
+      "expected_skill": null,
+      "note": "out of scope"
+    },
+    {
+      "id": 18,
+      "query": "what is the status of the deploy?",
+      "should_trigger": false,
+      "expected_skill": null,
+      "note": "out of scope"
+    }
+  ]
+}

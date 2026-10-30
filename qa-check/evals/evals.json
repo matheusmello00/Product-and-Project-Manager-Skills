@@ -1,0 +1,122 @@
+{
+  "skill_name": "qa-check",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Validate the criteria and scenarios of this backlog before I baseline it.",
+      "expected_output": "All stories Ready, coverage matrix complete, no invented findings.",
+      "files": [
+        "evals/files/stories_good.md"
+      ],
+      "expectations": [
+        "Verdict is Ready for the stories without blockers or majors",
+        "Coverage matrix shows each criterion with its scenarios",
+        "Does not pad the report with invented Minor findings",
+        "Does not rewrite or edit the stories"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I think the criteria of these stories are weak. Check them.",
+      "expected_output": "Findings per criterion with quoted text, severity and suggested fix; stories with defects not marked Ready.",
+      "files": [
+        "evals/files/stories_weak_criteria.md"
+      ],
+      "expectations": [
+        "Flags the story with fewer than two criteria",
+        "Flags the criterion with no When and the story with no 'so that'",
+        "Flags vague wording ('works', 'fast') as unmeasurable, quoting the exact text",
+        "Each finding names its location (story, AC number)",
+        "Suggested fixes needing a number or message are marked as needing the author's value",
+        "Does not rewrite the criteria in the source"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Do the test scenarios of these stories actually cover the criteria?",
+      "expected_output": "Uncovered criteria, a story with no scenarios, invalid type, nonexistent criterion link and happy-path-only stories reported.",
+      "files": [
+        "evals/files/stories_weak_scenarios.md"
+      ],
+      "expectations": [
+        "Reports the story with no scenarios as Not testable or Major",
+        "Reports the scenario linked to a criterion that does not exist",
+        "Reports criteria that no scenario covers in the coverage matrix",
+        "Flags stories with only happy-path scenarios and names the missing angle (negative, boundary, permission)",
+        "Flags the Scenario Outline placeholder with no Examples column",
+        "Proposes the missing scenarios in the report, in Gherkin, tagged @proposed and linked to existing criteria, without editing the backlog"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Complete the missing criteria and scenarios for these stories.",
+      "expected_output": "Report with proposed criteria and scenarios, plus a merged copy; the original untouched; no invented values.",
+      "files": [
+        "evals/files/stories_weak_scenarios.md"
+      ],
+      "expectations": [
+        "Runs the check first and lists the gaps",
+        "Writes <name>-qa-checked.md as a copy and leaves the original file unchanged",
+        "Proposed scenarios use new unique TC ids and tags @TC-xx @type @ACn @proposed",
+        "Proposed criteria continue the AC numbering and are marked (proposed)",
+        "Values missing from the story become 'needs the author's value' and open questions, not invented",
+        "Re-runs the form check on the merged copy"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Check the criteria and tests of ST-02 and ST-03 in this backlog.",
+      "expected_output": "Only the two stories are checked, with their findings and coverage; the rest of the backlog is not judged and the source file is untouched.",
+      "files": [
+        "evals/files/stories_weak_scenarios.md"
+      ],
+      "expectations": [
+        "Checks only ST-02 and ST-03 and says the other stories were not checked",
+        "Uses the story, AC and TC IDs of the backlog in every finding",
+        "Saves the report as a separate file and does not modify the backlog"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Valida os crit\u00e9rios de aceite desta hist\u00f3ria: '#### ST-01 \u2014 Publicar livro. As a student, I want to publish a book, so that others find it. Crit\u00e9rio: o formul\u00e1rio funciona bem.'",
+      "expected_output": "Report in Portuguese; the vague criterion flagged as Blocker; no invented criteria.",
+      "files": [],
+      "expectations": [
+        "Report is in Portuguese",
+        "Flags 'funciona bem' as untestable (Blocker) quoting it",
+        "Flags that the story has fewer than two criteria and no scenarios",
+        "Does not invent criteria or numbers; lists what the author must define",
+        "Keeps Given / When / Then keywords in English if it proposes a fix"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Check whether the criteria match what the descriptions say.",
+      "expected_output": "Description rules with no criterion found and quoted; proposed criteria in Given / When / Then with no invented value.",
+      "files": [
+        "evals/files/stories_description_gap.md"
+      ],
+      "expectations": [
+        "Flags that ST-01's description states a 120-character maximum for the title and no criterion covers it, quoting the description",
+        "Flags that ST-02's description states only the owner can remove a listing and no criterion covers it",
+        "Flags ST-02 AC2 ('it works correctly') as untestable",
+        "Proposes criteria for the gaps in Given / When / Then, marked proposed and citing the description sentence",
+        "Does not invent a message for the over-limit case; marks it as needing the author's value and adds an open question",
+        "Proposes a boundary scenario for 120/121 characters and a permission scenario for another student, tagged @proposed",
+        "Does not modify the backlog file"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Check this story: '#### ST-09 \u2014 Export report. As a manager, I want to export a report, so that I can share it.' (no description, no criteria)",
+      "expected_output": "Not testable, no proposals invented, pointed back to backlog-creator.",
+      "files": [],
+      "expectations": [
+        "Verdict is Not testable",
+        "Proposes no criteria and no scenarios because the story states no behaviour",
+        "Lists what the author must define as open questions",
+        "Points to backlog-creator"
+      ]
+    }
+  ]
+}

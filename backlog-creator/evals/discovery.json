@@ -1,0 +1,194 @@
+{
+  "skill_name": "backlog-creator",
+  "queries": [
+    {
+      "id": 1,
+      "query": "break this PRD into epics and user stories",
+      "should_trigger": true,
+      "expected_skill": "backlog-creator",
+      "note": "activation"
+    },
+    {
+      "id": 2,
+      "query": "create the backlog from the approved PRD",
+      "should_trigger": true,
+      "expected_skill": "backlog-creator",
+      "note": "activation"
+    },
+    {
+      "id": 3,
+      "query": "write user stories with acceptance criteria for this feature list",
+      "should_trigger": true,
+      "expected_skill": "backlog-creator",
+      "note": "activation"
+    },
+    {
+      "id": 4,
+      "query": "group these requirements into epics",
+      "should_trigger": true,
+      "expected_skill": "backlog-creator",
+      "note": "activation"
+    },
+    {
+      "id": 5,
+      "query": "create epics and stories from the PRD",
+      "should_trigger": true,
+      "expected_skill": "backlog-creator",
+      "note": "activation"
+    },
+    {
+      "id": 6,
+      "query": "decompose the new change request into stories",
+      "should_trigger": true,
+      "expected_skill": "backlog-creator",
+      "note": "activation"
+    },
+    {
+      "id": 7,
+      "query": "restructure our backlog so stories follow INVEST",
+      "should_trigger": true,
+      "expected_skill": "backlog-creator",
+      "note": "activation"
+    },
+    {
+      "id": 8,
+      "query": "prioritise the stories with MoSCoW and tag the dependencies",
+      "should_trigger": true,
+      "expected_skill": "backlog-creator",
+      "note": "activation"
+    },
+    {
+      "id": 9,
+      "query": "do all the PRD requirements have a story?",
+      "should_trigger": true,
+      "expected_skill": "backlog-creator",
+      "note": "activation"
+    },
+    {
+      "id": 10,
+      "query": "turn the one-pager into Jira epics and stories",
+      "should_trigger": true,
+      "expected_skill": "backlog-creator",
+      "note": "activation"
+    },
+    {
+      "id": 11,
+      "query": "I need the initial project backlog before sprint planning",
+      "should_trigger": true,
+      "expected_skill": "backlog-creator",
+      "note": "activation"
+    },
+    {
+      "id": 12,
+      "query": "split this story, it is too big",
+      "should_trigger": true,
+      "expected_skill": "backlog-creator",
+      "note": "activation"
+    },
+    {
+      "id": 13,
+      "query": "write the PRD for the new swap feature",
+      "should_trigger": false,
+      "expected_skill": "prd-generator",
+      "note": "collision with neighbouring skill"
+    },
+    {
+      "id": 14,
+      "query": "are the acceptance criteria of these stories complete and unambiguous?",
+      "should_trigger": false,
+      "expected_skill": "qa-check",
+      "note": "collision with neighbouring skill"
+    },
+    {
+      "id": 15,
+      "query": "write the technical spec for ST-12",
+      "should_trigger": false,
+      "expected_skill": "spec-writer",
+      "note": "collision with neighbouring skill"
+    },
+    {
+      "id": 16,
+      "query": "generate the QA test cases for this story",
+      "should_trigger": false,
+      "expected_skill": "qa-scenarios",
+      "note": "collision with neighbouring skill"
+    },
+    {
+      "id": 17,
+      "query": "estimate story points for the whole backlog",
+      "should_trigger": false,
+      "expected_skill": null,
+      "note": "out of scope"
+    },
+    {
+      "id": 18,
+      "query": "what is the status of the sprint?",
+      "should_trigger": false,
+      "expected_skill": "status-tracking",
+      "note": "collision with neighbouring skill"
+    },
+    {
+      "id": 19,
+      "query": "add test scenarios to each story of the backlog",
+      "should_trigger": true,
+      "expected_skill": "backlog-creator",
+      "note": "activation"
+    },
+    {
+      "id": 20,
+      "query": "generate the epics, stories, acceptance criteria and test scenarios",
+      "should_trigger": true,
+      "expected_skill": "backlog-creator",
+      "note": "activation"
+    },
+    {
+      "id": 21,
+      "query": "read this 300-page specification and turn it into epics and stories",
+      "should_trigger": true,
+      "expected_skill": "backlog-creator",
+      "note": "activation"
+    },
+    {
+      "id": 22,
+      "query": "extract all the requirements from this Confluence page and the meeting notes and build the backlog",
+      "should_trigger": true,
+      "expected_skill": "backlog-creator",
+      "note": "activation"
+    },
+    {
+      "id": 23,
+      "query": "summarise this requirements document",
+      "should_trigger": false,
+      "expected_skill": null,
+      "note": "out of scope"
+    },
+    {
+      "id": 24,
+      "query": "export the test scenarios to Gherkin feature files",
+      "should_trigger": true,
+      "expected_skill": "backlog-creator",
+      "note": "activation"
+    },
+    {
+      "id": 25,
+      "query": "write the test scenarios in Gherkin format for each story",
+      "should_trigger": true,
+      "expected_skill": "backlog-creator",
+      "note": "activation"
+    },
+    {
+      "id": 26,
+      "query": "build the backlog from prd-bookswap.md",
+      "should_trigger": true,
+      "expected_skill": "backlog-creator",
+      "note": "activation"
+    },
+    {
+      "id": 27,
+      "query": "write the PRD for the swap feature",
+      "should_trigger": false,
+      "expected_skill": "create-prd",
+      "note": "collision with neighbouring skill"
+    }
+  ]
+}
