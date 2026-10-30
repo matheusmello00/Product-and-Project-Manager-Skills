@@ -107,4 +107,4 @@ Abre el `SKILL.md` correspondiente y entrégaselo junto con tu trabajo. Incluye 
 
 ## 👤 Autor
 
-Creado por [Matheus Mello](https://github.com/matheusmello00) — Senior Product Manager & Agile Coach.
+Creado por [Matheus Mello](https://github.com/matheusmello00)
