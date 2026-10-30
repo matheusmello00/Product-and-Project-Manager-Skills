@@ -9,7 +9,7 @@
   <text x="76" y="174" font-family="'Arial Black', 'Helvetica Neue', Impact, Arial, sans-serif" font-size="52" font-weight="900" letter-spacing="-2" fill="#1A1A1A">Manager Skills</text>
 
   <!-- roles -->
-  <text x="80" y="224" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="27" font-weight="700" fill="#1A1A1A">Product Management · Project Management</text>
+  <text x="80" y="224" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="27" font-weight="700" fill="#1A1A1A">Product and Project Management</text>
   <text x="80" y="262" font-family="Newsreader, Georgia, 'Times New Roman', serif" font-size="22" fill="#4A4A4A">For Claude, Cursor and AI assistants</text>
 
   <!-- offset frame -->
